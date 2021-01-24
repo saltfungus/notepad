@@ -63,7 +63,7 @@ then
     read -p "enter a command: " command
 elif [ "$command" == "start" ]
 then
-    python 3 notepad.py
+    python3 notepad.py
 else
     echo "invalid command"
     read -p "enter a command: " command
