@@ -228,18 +228,3 @@ class Notepad:
 # Run main application 
 notepad = Notepad(width=1200,height=800) 
 notepad.run() 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
