@@ -3,13 +3,10 @@ import os
 from tkinter import *
 from tkinter.messagebox import *
 from tkinter.filedialog import *
-import tkinter.font as tkfont
 import webbrowser
 
 class Notepad: 
     __root = Tk()
-
-    tkfont.Font(Font=self.__thisTextArea).measure('    ')
     # default window width and height 
     __thisWidth = 300
     __thisHeight = 300
