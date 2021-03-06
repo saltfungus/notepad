@@ -1,28 +1,3 @@
-clear
-echo 'starting.'
-sleep 0.2
-clear
-echo 'starting..'
-sleep 0.2
-clear
-echo 'starting...'
-sleep 0.2
-clear
-echo 'starting....'
-sleep 0.2
-clear
-echo 'starting.'
-sleep 0.2
-clear
-echo 'starting..'
-sleep 0.2
-clear
-echo 'starting...'
-sleep 0.2
-clear
-echo 'starting....'
-sleep 0.2
-clear
 echo 'starting.'
 sleep 0.2
 clear
