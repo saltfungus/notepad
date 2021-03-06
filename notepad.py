@@ -3,6 +3,7 @@ import os
 from tkinter import *
 from tkinter.messagebox import *
 from tkinter.filedialog import *
+import tkinter.font as tkfont
 import webbrowser
 
 class Notepad: 
@@ -14,17 +15,19 @@ class Notepad:
     __thisMenuBar = Menu(__root) 
     __thisFileMenu = Menu(__thisMenuBar, tearoff=0) 
     __thisEditMenu = Menu(__thisMenuBar, tearoff=0) 
-    __thisHelpMenu = Menu(__thisMenuBar, tearoff=0) 
+    __thisHelpMenu = Menu(__thisMenuBar, tearoff=0)
+        
       
     # To add scrollbar 
     __thisScrollBar = Scrollbar(__thisTextArea)      
     __file = None
-  
+     
+        
     def __init__(self,**kwargs): 
   
         # Set icon 
         try: 
-                self.__root.wm_iconbitmap("Notepad.ico")  
+                self.__root.iconbitmap(r'C:\Users\Public\Documents\Notepad-icon\notepad.ico')                
         except: 
                 pass
   
@@ -121,13 +124,25 @@ class Notepad:
       
           
     def __quitApplication(self): 
-        self.__root.destroy() 
-        # exit() 
+        ext = askquestion("Notepad-Exit?", "are you sure you want to exit") 
+        if ext == 'yes':
+            self.__root.destroy()
+        else:
+            showinfo("Notepad-return", "you will return to Notepad")
+    # exit() 
   
     def __showAbout(self): 
-        showinfo("Notepad","Notepad was made because Sam Glase who was the person who programmed this app wanted to have a fast text even if you had really bad hardware", icon="question")
+        About = Toplevel(self.__root, bg="lightgrey")
+        About.title("Notepad-About")
+        About.geometry("270x200")
+        About.iconbitmap(r'C:\Users\Sam Glase\Desktop\apps\app location\notepad\notepad.ico')
+        Label(About, text="About us", bg="lightgrey").pack()
+        Label(About, bg="lightgrey").pack()
+        Label(About, text="hhh", foreground="lightgrey", bg="lightgrey").pack(side="left")
+        Label(About, text="Notepad \n was made because Sam Glase \n wanted a text editor that could run on \n any hardware.\n\n\n\n\n\nversion: 1.1 author: Sam Glase", borderwidth=2, relief="groove", bg="white", anchor=NW).pack(side="right", fill="both", expand="true")
+        
     def __showHelp(self): 
-        showinfo("Notepad","contact Sam Glase on http://ourmediaphp.atwebpages.com/contacts.php or email samglase69@gmail.com", icon="question")
+        showinfo("Notepad-Help","contact the owner at http://ourmediaphp.atwebpages.com/contacts.php or email samglase69@gmail.com", icon="question")
     def __showWebsite(self): 
         webbrowser.open_new(r"http://ourmediaphp.atwebpages.com")
   
@@ -212,7 +227,8 @@ class Notepad:
         self.__thisTextArea.event_generate("<<Copy>>") 
   
     def __paste(self): 
-        self.__thisTextArea.event_generate("<<Paste>>") 
+        self.__thisTextArea.event_generate("<<Paste>>")
+            
   
     def run(self): 
   
@@ -223,5 +239,5 @@ class Notepad:
   
   
 # Run main application 
-notepad = Notepad(width=1200,height=800) 
+notepad = Notepad(width=800,height=500) 
 notepad.run() 
